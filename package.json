@@ -1,0 +1,40 @@
+{
+  "name": "opencode-rag-plugin",
+  "version": "0.1.0",
+  "description": "Local-first RAG tools for OpenCode using GGUF embeddings and pgvector.",
+  "private": true,
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "tsc",
+    "check": "biome check . && npm run typecheck",
+    "format": "biome format --write .",
+    "smoke": "npm run build && node scripts/smoke.mjs",
+    "test": "vitest run",
+    "test:integration": "vitest run tests/db.integration.test.ts",
+    "typecheck": "tsc --noEmit && tsc --project tsconfig.test.json"
+  },
+  "dependencies": {
+    "@dqbd/tiktoken": "^1.0.15",
+    "@opencode-ai/plugin": "^1.18.32",
+    "cheerio": "^1.2.0",
+    "ky": "^2.1.0",
+    "node-llama-cpp": "^3.21.1",
+    "pg": "^8.23.0",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.5.14",
+    "@types/node": "^22.20.4",
+    "@types/pg": "^8.20.0",
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.11"
+  },
+  "allowScripts": {
+    "node-llama-cpp@3.21.1": true
+  }
+}
