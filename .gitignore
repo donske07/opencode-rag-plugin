@@ -1,0 +1,14 @@
+.DS_Store
+.env
+.env.*
+!.env.example
+coverage/
+dist/
+models/*.gguf
+node_modules/
+*.log
+
+.opencode/bun.lock
+.opencode/node_modules/
+.opencode/package.json
+.opencode/project-card.md
